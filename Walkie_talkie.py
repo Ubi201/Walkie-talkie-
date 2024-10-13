@@ -1,9 +1,9 @@
 from gtts import gTTS
 import os
-import time
+import subprocess
 
 # Text to be converted to audio
-text = "This is a test walkie-talkie message."
+text = "Dari 29 minta 34 beri maklumat taiping over."
 
 # Create gTTS object
 tts = gTTS(text=text, lang='en')
@@ -12,5 +12,5 @@ tts = gTTS(text=text, lang='en')
 audio_file = "walkie_talkie.mp3"
 tts.save(audio_file)
 
-# Play the audio file using playsound
-os.system(f"playsound {audio_file}")
+# Play the audio file using mpg123
+subprocess.run(["mpg123", audio_file])
